@@ -1,13 +1,9 @@
-/* Required headers from Apache httpd */
-#include "http_protocol.h"
-#include "http_log.h"
-
-/* Prototypes */
-static void hello_register_hooks(apr_pool_t *pool);
-static int hello_request_handler(request_rec *request, int lookup_uri);
+/* Hello implementation */
+#include "mod_hello.h"
+#include "hello.h"
 
 /* The main config structure */
-AP_DECLARE_MODULE(hosted_tools_auth) = {
+AP_DECLARE_MODULE(hello) = {
     STANDARD20_MODULE_STUFF,
     NULL,                      /* Per-directory configuration handler */
     NULL,                      /* Merge handler for per-directory configurations */
@@ -27,7 +23,7 @@ static void hello_register_hooks(apr_pool_t *pool)
 /* Request handler hook */
 static int hello_request_handler(request_rec *request, int lookup_uri)
 {
-    ap_rprintf(request, "Hello world!");
+    say_hello(request);
 
     return OK;
 }
