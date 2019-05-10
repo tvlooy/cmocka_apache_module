@@ -15,6 +15,7 @@ clean:
 
 test: clean
 | gcc -o run_test mod_hello.c run_test.c \
+|    -Wl,--unresolved-symbols=ignore-in-object-files \
 |    -lcmocka -lapr-1 \
 |    -I/usr/include/apache2 -I/usr/include/apr-1.0
 | ./run_test
