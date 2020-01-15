@@ -7,7 +7,7 @@
 
 #include "http_protocol.h"
 
-https://www.samba.org/~asn/sambaxp_2018_andreas_schneider_cmocka.pdf
+//https://www.samba.org/~asn/sambaxp_2018_andreas_schneider_cmocka.pdf
 void wrap__ap_rprintf() { }
 
 static void null_test_success(void **state) {

@@ -3,3 +3,4 @@ apache2*
 *.la
 *.lo
 *.slo
+run_test
